@@ -34,10 +34,15 @@
 	animation: lum-fadeIn 0.4s ease;
 }
 
+.lumination-homework-helper *,
+.lumination-homework-helper *::before,
+.lumination-homework-helper *::after {
+	box-sizing: border-box;
+}
+
 .lumination-container {
 	padding: 1.5rem;
-	border: 1px solid currentColor;
-	border-opacity: 0.15;
+	border: 1px solid rgba(0, 0, 0, 0.15);
 	border-radius: 8px;
 	background: var(--lumination-bg, #fff);
 }
@@ -69,8 +74,7 @@
 /* ── Drop Zone ── */
 
 .lumination-drop-zone {
-	border: 2px dashed currentColor;
-	border-opacity: 0.3;
+	border: 2px dashed rgba(0, 0, 0, 0.25);
 	border-radius: 8px;
 	padding: 2.5rem 1.5rem;
 	text-align: center;
@@ -81,12 +85,12 @@
 }
 
 .lumination-drop-zone:hover {
-	border-opacity: 0.5;
+	border-color: var(--lumination-btn-bg, rgba(0, 0, 0, 0.4));
 	background: rgba(0, 0, 0, 0.04);
 }
 
 .lumination-drop-zone.drag-over {
-	border-opacity: 0.8;
+	border-color: var(--lumination-btn-bg, rgba(0, 0, 0, 0.6));
 	border-style: solid;
 	background: rgba(0, 0, 0, 0.06);
 	transform: scale(1.01);
@@ -152,8 +156,7 @@
 
 .lumination-textarea {
 	width: 100%;
-	border: 1px solid currentColor;
-	border-opacity: 0.3;
+	border: 1px solid rgba(0, 0, 0, 0.25);
 	border-radius: 4px;
 	padding: 0.75rem;
 	font-family: inherit;
@@ -166,7 +169,7 @@
 
 .lumination-textarea:focus {
 	outline: none;
-	border-opacity: 0.6;
+	border-color: var(--lumination-btn-bg, rgba(0, 0, 0, 0.5));
 	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
 }
 
@@ -206,8 +209,9 @@
 
 .lumination-btn-primary:disabled {
 	opacity: 0.5;
-	cursor: default;
+	cursor: default !important;
 	transform: none;
+	pointer-events: none;
 }
 
 .lumination-btn-primary:active:not(:disabled) {
@@ -220,8 +224,7 @@
 .lumination-solution {
 	margin-top: 2rem;
 	padding-top: 2rem;
-	border-top: 1px solid currentColor;
-	border-opacity: 0.15;
+	border-top: 1px solid rgba(0, 0, 0, 0.15);
 	animation: lum-fadeInUp 0.4s ease;
 }
 
@@ -232,8 +235,7 @@
 
 .lumination-content {
 	padding: 1.5rem;
-	border: 1px solid currentColor;
-	border-opacity: 0.15;
+	border: 1px solid rgba(0, 0, 0, 0.15);
 	border-radius: 4px;
 	background: rgba(0, 0, 0, 0.02);
 	line-height: 1.7;
@@ -321,8 +323,7 @@
 
 .lumination-content th,
 .lumination-content td {
-	border: 1px solid currentColor;
-	border-opacity: 0.2;
+	border: 1px solid rgba(0, 0, 0, 0.2);
 	padding: 0.5em 0.75em;
 	text-align: left;
 }
