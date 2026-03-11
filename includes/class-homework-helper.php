@@ -99,6 +99,7 @@ class Lumination_Homework_Helper {
 		$hover      = Lumination_Core_Settings::get_color( 'primary_hover' );
 		$text       = Lumination_Core_Settings::get_color( 'button_text' );
 		$background = Lumination_Core_Settings::get_color( 'tool_background' );
+		$tool_text  = Lumination_Core_Settings::get_color( 'tool_text' );
 
 		$vars = array();
 		if ( $primary ) {
@@ -114,6 +115,9 @@ class Lumination_Homework_Helper {
 		}
 		if ( $background ) {
 			$vars[] = '--lumination-bg:' . sanitize_hex_color( $background );
+		}
+		if ( $tool_text ) {
+			$vars[] = '--lumination-text:' . sanitize_hex_color( $tool_text );
 		}
 
 		if ( empty( $vars ) ) {
