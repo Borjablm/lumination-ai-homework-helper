@@ -1,0 +1,417 @@
+/**
+ * Homework Helper Styles
+ *
+ * Theme-agnostic styling that adapts to WordPress themes.
+ * Minimal opinionated styles - inherits colors, fonts, spacing from active theme.
+ *
+ * @package Lumination
+ * @since 1.0.0
+ */
+
+/* ── Utilities ── */
+
+@keyframes lum-fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes lum-fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* ── Container ── */
+
+.lumination-homework-helper {
+	max-width: 800px;
+	margin: 2rem auto;
+	animation: lum-fadeIn 0.4s ease;
+}
+
+.lumination-container {
+	padding: 1.5rem;
+	border: 1px solid currentColor;
+	border-opacity: 0.15;
+	border-radius: 8px;
+	background: var(--lumination-bg, #fff);
+}
+
+/* ── Header ── */
+
+.lumination-header {
+	margin-bottom: 1.5rem;
+}
+
+.lumination-header h2 {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+}
+
+.lumination-description {
+	margin: 0;
+	opacity: 0.7;
+}
+
+/* ── Input Section ── */
+
+.lumination-input-section {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+/* ── Drop Zone ── */
+
+.lumination-drop-zone {
+	border: 2px dashed currentColor;
+	border-opacity: 0.3;
+	border-radius: 8px;
+	padding: 2.5rem 1.5rem;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.25s ease;
+	background: rgba(0, 0, 0, 0.02);
+	position: relative;
+}
+
+.lumination-drop-zone:hover {
+	border-opacity: 0.5;
+	background: rgba(0, 0, 0, 0.04);
+}
+
+.lumination-drop-zone.drag-over {
+	border-opacity: 0.8;
+	border-style: solid;
+	background: rgba(0, 0, 0, 0.06);
+	transform: scale(1.01);
+}
+
+.lumination-drop-zone.has-file {
+	border-color: #2d7a2d;
+	border-style: solid;
+	background: rgba(45, 122, 45, 0.05);
+}
+
+.drop-zone-icon {
+	font-size: 2.5rem;
+	margin-bottom: 0.75rem;
+	display: block;
+	line-height: 1;
+	pointer-events: none;
+	opacity: 0.6;
+}
+
+.drop-zone-label {
+	font-weight: 600;
+	margin: 0 0 0.5rem;
+	pointer-events: none;
+}
+
+.drop-zone-hint {
+	font-size: 0.9em;
+	margin: 0.25rem 0;
+	pointer-events: none;
+	opacity: 0.7;
+}
+
+.drop-zone-filename {
+	font-size: 0.9em;
+	color: #2d7a2d;
+	font-weight: 600;
+	margin: 1rem 0 0;
+	font-family: monospace;
+	pointer-events: none;
+}
+
+.lumination-drop-zone input[type="file"] {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/* ── Text Input ── */
+
+.lumination-text-input-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.lumination-label {
+	font-weight: 600;
+}
+
+.lumination-textarea {
+	width: 100%;
+	border: 1px solid currentColor;
+	border-opacity: 0.3;
+	border-radius: 4px;
+	padding: 0.75rem;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: 1.5;
+	resize: vertical;
+	min-height: 120px;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lumination-textarea:focus {
+	outline: none;
+	border-opacity: 0.6;
+	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+/* ── Submit Button ── */
+
+.lumination-submit-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 0.5rem;
+}
+
+.lumination-btn-primary {
+	/* Use WordPress theme button styles as base */
+	border: 1px solid;
+	border-radius: 4px;
+	padding: 0.75rem 1.5rem;
+	font-weight: 600;
+	cursor: pointer;
+	font-size: 1em;
+	font-family: inherit;
+	line-height: 1.5;
+	transition: all 0.2s ease;
+	min-width: 180px;
+
+	/* Default colors (can be overridden by custom properties) */
+	background-color: var(--lumination-btn-bg, #2271b1);
+	color: var(--lumination-btn-text, #fff);
+	border-color: var(--lumination-btn-border, #2271b1);
+}
+
+.lumination-btn-primary:hover:not(:disabled) {
+	background-color: var(--lumination-btn-bg-hover, #135e96);
+	border-color: var(--lumination-btn-border-hover, #135e96);
+	transform: translateY(-1px);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lumination-btn-primary:disabled {
+	opacity: 0.5;
+	cursor: default;
+	transform: none;
+}
+
+.lumination-btn-primary:active:not(:disabled) {
+	transform: translateY(0);
+	box-shadow: none;
+}
+
+/* ── Solution Display ── */
+
+.lumination-solution {
+	margin-top: 2rem;
+	padding-top: 2rem;
+	border-top: 1px solid currentColor;
+	border-opacity: 0.15;
+	animation: lum-fadeInUp 0.4s ease;
+}
+
+.lumination-solution h3 {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+.lumination-content {
+	padding: 1.5rem;
+	border: 1px solid currentColor;
+	border-opacity: 0.15;
+	border-radius: 4px;
+	background: rgba(0, 0, 0, 0.02);
+	line-height: 1.7;
+}
+
+/* ── Content Rendering (Markdown + Math) ── */
+
+/**
+ * IMPORTANT: Based on Azvai Experiments learnings:
+ * - NO overflow rules (prevents formula clipping)
+ * - Fixed heading sizes (not responsive clamp)
+ * - Let content flow naturally
+ */
+
+.lumination-content > *:first-child {
+	margin-top: 0;
+}
+
+.lumination-content > *:last-child {
+	margin-bottom: 0;
+}
+
+.lumination-content p {
+	margin: 0 0 1em;
+}
+
+.lumination-content h1 {
+	font-size: 1.5em;
+	margin: 1.5em 0 0.5em;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.lumination-content h2 {
+	font-size: 1.3em;
+	margin: 1.25em 0 0.5em;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.lumination-content h3 {
+	font-size: 1.1em;
+	margin: 1em 0 0.5em;
+	font-weight: 600;
+	line-height: 1.25;
+}
+
+.lumination-content ul,
+.lumination-content ol {
+	margin: 0 0 1em;
+	padding-left: 2em;
+}
+
+.lumination-content li {
+	margin: 0.25em 0;
+}
+
+.lumination-content pre {
+	margin: 1em 0;
+	padding: 1em;
+	border-radius: 4px;
+	background: rgba(0, 0, 0, 0.05);
+	overflow-x: auto;
+	font-family: monospace;
+}
+
+.lumination-content code {
+	font-family: monospace;
+	font-size: 0.9em;
+	background: rgba(0, 0, 0, 0.05);
+	padding: 0.15em 0.3em;
+	border-radius: 3px;
+}
+
+.lumination-content pre code {
+	background: none;
+	padding: 0;
+}
+
+.lumination-content table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 1em 0;
+}
+
+.lumination-content th,
+.lumination-content td {
+	border: 1px solid currentColor;
+	border-opacity: 0.2;
+	padding: 0.5em 0.75em;
+	text-align: left;
+}
+
+.lumination-content th {
+	background: rgba(0, 0, 0, 0.05);
+	font-weight: 600;
+}
+
+/* Math formulas - MathJax handles rendering, we just ensure proper sizing */
+.lumination-content .MathJax {
+	font-size: 1em !important;
+}
+
+/* ── Loading State ── */
+
+.lumination-loading {
+	text-align: center;
+	padding: 2rem;
+	opacity: 0.7;
+}
+
+/* ── Error/Notice States ── */
+
+.lumination-notice {
+	padding: 1rem;
+	border-radius: 4px;
+	margin: 1rem 0;
+	line-height: 1.5;
+}
+
+.lumination-notice-error {
+	background: rgba(255, 0, 0, 0.1);
+	color: #c00;
+	border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.lumination-notice-success {
+	background: rgba(0, 128, 0, 0.1);
+	color: #2d7a2d;
+	border: 1px solid rgba(0, 128, 0, 0.3);
+}
+
+.lumination-error {
+	color: #c00;
+	padding: 1rem;
+	text-align: center;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+	.lumination-homework-helper {
+		margin: 1rem;
+	}
+
+	.lumination-container {
+		padding: 1rem;
+	}
+
+	.lumination-drop-zone {
+		padding: 2rem 1rem;
+	}
+
+	.drop-zone-icon {
+		font-size: 2rem;
+	}
+
+	.lumination-btn-primary {
+		width: 100%;
+	}
+
+	.lumination-content {
+		padding: 1rem;
+	}
+}
+
+/* ── Accessibility ── */
+
+.lumination-homework-helper *:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.lumination-homework-helper,
+	.lumination-solution,
+	.lumination-drop-zone {
+		animation: none;
+		transition: none;
+	}
+}
