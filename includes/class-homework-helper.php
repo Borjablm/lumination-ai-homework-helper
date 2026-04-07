@@ -70,6 +70,7 @@ class Lumination_Homework_Helper {
 				'title'       => '',
 				'description' => '',
 				'button_text' => __( 'Solve Problem', 'lumination-ai-homework-helper' ),
+				'heading'     => '',
 			),
 			$atts,
 			'lumination_homework_helper'
@@ -79,6 +80,7 @@ class Lumination_Homework_Helper {
 		$lhh_title        = sanitize_text_field( $atts['title'] );
 		$lhh_description  = sanitize_text_field( $atts['description'] );
 		$lhh_button_text  = sanitize_text_field( $atts['button_text'] );
+		$lhh_heading_tag  = Lumination_Core_Settings::get_heading_tag( sanitize_text_field( $atts['heading'] ) );
 		$lhh_button_class = get_option( 'lumination_hh_use_theme_button', '' )
 			? 'wp-element-button'
 			: 'lumination-btn-primary';

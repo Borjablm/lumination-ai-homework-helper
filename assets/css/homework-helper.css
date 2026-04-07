@@ -230,9 +230,11 @@
 	animation: lum-fadeInUp 0.4s ease;
 }
 
-.lumination-solution h3 {
+.lumination-solution-title {
 	margin-top: 0;
 	margin-bottom: 1rem;
+	font-size: 1.17em;
+	font-weight: 700;
 }
 
 .lumination-content {

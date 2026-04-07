@@ -3,7 +3,7 @@
  * Homework Helper UI Template
  *
  * Frontend interface for homework helper.
- * Receives $lhh_title, $lhh_description, $lhh_button_text, $lhh_button_class from shortcode.
+ * Receives $lhh_title, $lhh_description, $lhh_button_text, $lhh_button_class, $lhh_heading_tag from shortcode.
  *
  * @package    LuminationHomeworkHelper
  * @since      1.0.0
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!-- Header -->
 		<div class="lumination-header">
 			<?php if ( ! empty( $lhh_title ) ) : ?>
-				<h2><?php echo esc_html( $lhh_title ); ?></h2>
+				<<?php echo esc_attr( $lhh_heading_tag ); ?>><?php echo esc_html( $lhh_title ); ?></<?php echo esc_attr( $lhh_heading_tag ); ?>>
 			<?php endif; ?>
 			<?php if ( ! empty( $lhh_description ) ) : ?>
 				<p class="lumination-description"><?php echo esc_html( $lhh_description ); ?></p>
@@ -78,7 +78,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<!-- Solution Display -->
 		<div id="solutionContainer" class="lumination-solution" style="display: none;">
-			<h3><?php esc_html_e( 'Step-by-Step Solution', 'lumination-ai-homework-helper' ); ?></h3>
+			<div class="lumination-solution-title"><?php esc_html_e( 'Step-by-Step Solution', 'lumination-ai-homework-helper' ); ?></div>
 			<div id="solutionContent" class="lumination-content" role="region" aria-live="polite">
 				<!-- Solution will be rendered here -->
 			</div>
