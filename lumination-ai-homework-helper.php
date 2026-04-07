@@ -14,7 +14,7 @@
  * @wordpress-plugin
  * Plugin Name:       Lumination AI Homework Helper
  * Description:       Step-by-step AI-powered solutions for math and science homework. Upload an image or PDF, paste a problem, or type it out — and get a clear, worked solution with LaTeX math rendering. Requires Lumination Core.
- * Version:           1.2.0
+ * Version:           1.2.1
  * Requires at least: 6.4
  * Requires PHP:      7.4
  * Author:            Lumination Team
@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // ── Constants ────────────────────────────────────────────────────────────────
 
-define( 'LUMINATION_HH_VERSION', '1.2.0' );
+define( 'LUMINATION_HH_VERSION', '1.2.1' );
 define( 'LUMINATION_HH_FILE',    __FILE__ );
 define( 'LUMINATION_HH_DIR',     plugin_dir_path( __FILE__ ) );
 define( 'LUMINATION_HH_URL',     plugin_dir_url( __FILE__ ) );
